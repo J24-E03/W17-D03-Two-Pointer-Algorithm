@@ -108,7 +108,6 @@ public class Main {
   private static void exercise2() {
     int[] nums = {3, 2, 2, 3, 4, 5, 3};
     int val = 3;
-    int i = 0;
 
     // Initialize two pointers:
     // - 'slow' points to the next position for a non-val element
@@ -122,14 +121,13 @@ public class Main {
       if (nums[fast] != val) {
         // Replace the element at 'slow' with the current element
         nums[slow] = nums[fast];
-        i++;
         slow++;
       }
       fast++;
     }
 
     // 'slow' now indicates the number of elements not equal to 'val'
-    System.out.println("Number of elements not equal to " + val + ": " + i + " (" + Arrays.toString(Arrays.copyOf(nums, i)) + ")");
+    System.out.println("Number of elements not equal to " + val + ": " + slow + " (" + Arrays.toString(Arrays.copyOf(nums, slow)) + ")");
   }
 
   /**
